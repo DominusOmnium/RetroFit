@@ -21,6 +21,7 @@ import static java.text.DateFormat.getTimeInstance;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -50,6 +51,13 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.graphview.GraphView;
+import com.graphview.ValueDependentColor;
+import com.graphview.series.BarGraphSeries;
+import com.graphview.series.DataPointGr;
+import com.graphview.series.DataPointInterface;
+
+
 import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -58,6 +66,7 @@ import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity {
     public static final String TAG = "BasicHistoryApi";
+    static GraphView graph;
     // Identifier to identify the sign in activity.
     private static final int REQUEST_OAUTH_REQUEST_CODE = 1;
 
@@ -69,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
         // This method sets up our custom logger, which will print all log messages to the device
         // screen, as well as to adb logcat.
+        graph = (GraphView) findViewById(R.id.graph);
         initializeLogging();
 
         FitnessOptions fitnessOptions =
@@ -197,7 +207,7 @@ public class MainActivity extends AppCompatActivity {
         Date now = new Date();
         cal.setTime(now);
         long endTime = cal.getTimeInMillis();
-        cal.add(Calendar.WEEK_OF_YEAR, -1);
+        cal.add(Calendar.WEEK_OF_YEAR, -4);
         long startTime = cal.getTimeInMillis();
 
         java.text.DateFormat dateFormat = getDateInstance();
@@ -245,20 +255,35 @@ public class MainActivity extends AppCompatActivity {
         // [END parse_read_data_result]
     }
 
+    static float i = 0;
     // [START parse_dataset]
     private static void dumpDataSet(DataSet dataSet) {
+
+        BarGraphSeries<DataPointGr> series = new BarGraphSeries<>();
         Log.i(TAG, "Data returned for Data type: " + dataSet.getDataType().getName());
         DateFormat dateFormat = getTimeInstance();
 
         for (DataPoint dp : dataSet.getDataPoints()) {
-            Log.i(TAG, "Data point:");
+            /*Log.i(TAG, "Data point:");
             Log.i(TAG, "\tType: " + dp.getDataType().getName());
             Log.i(TAG, "\tStart: " + dateFormat.format(dp.getStartTime(TimeUnit.MILLISECONDS)));
-            Log.i(TAG, "\tEnd: " + dateFormat.format(dp.getEndTime(TimeUnit.MILLISECONDS)));
+            Log.i(TAG, "\tEnd: " + dateFormat.format(dp.getEndTime(TimeUnit.MILLISECONDS)));*/
             for (Field field : dp.getDataType().getFields()) {
-                Log.i(TAG, "\tField: " + field.getName() + " Value: " + dp.getValue(field));
+                series.appendData(new DataPointGr(i, dp.getValue(field).asInt()), true, 30);
+
+                //Log.i(TAG, "\tField: " + field.getName() + " Value: " + dp.getValue(field));
             }
+            i += 1;
         }
+        //series.setSpacing(0);
+
+        //series.setDataWidth(100);
+        //series.setDrawValuesOnTop(true);
+        //series.setValuesOnTopColor(Color.RED);
+        graph.addSeries(series);
+        graph.getViewport().setScrollable(true);
+        graph.getViewport().setScrollableY(true);
+        graph.getViewport().setScalable(true);
     }
     // [END parse_dataset]
 
@@ -395,7 +420,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.action_delete_data) {
-            deleteData();
+            //deleteData();
             return true;
         } else if (id == R.id.action_update_data) {
             clearLogView();
@@ -419,14 +444,14 @@ public class MainActivity extends AppCompatActivity {
         MessageOnlyLogFilter msgFilter = new MessageOnlyLogFilter();
         logWrapper.setNext(msgFilter);
         // On screen logging via a customized TextView.
-        LogView logView = (LogView) findViewById(R.id.sample_logview);
+        //LogView logView = (LogView) findViewById(R.id.sample_logview);
 
         // Fixing this lint error adds logic without benefit.
         // noinspection AndroidLintDeprecation
-        logView.setTextAppearance(R.style.Log);
+        //logView.setTextAppearance(R.style.Log);
 
-        logView.setBackgroundColor(Color.WHITE);
-        msgFilter.setNext(logView);
-        Log.i(TAG, "Ready.");
+        //logView.setBackgroundColor(Color.WHITE);
+        //msgFilter.setNext(logView);
+        //Log.i(TAG, "Ready.");
     }
 }

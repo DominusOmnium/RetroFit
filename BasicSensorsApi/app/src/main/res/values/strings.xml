@@ -20,13 +20,13 @@
     <string name="action_update_session">Update step count data</string>
     <string name="action_delete_session">Delete step count data</string>
     <string name="action_settings">Settings</string>
-    <string name="tv_name">Retro ФИТ</string>
+    <string name="tv_name">ЗАБОТА+</string>
     <string name="b_start">СТАРТ</string>
     <string name="N1">Добро пожаловать!</string>
     <string name="N2">Создайте аккаунт для доступа в\nсистему</string>
     <string name="N3">Не можете войти?\nСообщить об ошибке</string>
     <string name="N4">Отлично! Ваш аккаунт готов!</string>
-    <string name="N5">Вы можете пользоваться\nНАЗВАНИЕ ПРОЕКТА ЗДЕСЬ.\nСпасибо за регистрацию!</string>
+    <string name="N5">Вы можете пользоваться\nЗАБОТА+.\nСпасибо за регистрацию!</string>
     <string name="title_activity_check_data">CheckData</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>

@@ -18,7 +18,9 @@ limitations under the License.
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light">
         <item name="colorPrimaryDark">#05348E</item>
+        <item name="colorPrimary">#053BA6</item>
     </style>
+
 
     <style name="Log" parent="AppTheme">
         <item name="android:typeface">monospace</item>
