@@ -277,8 +277,8 @@ public class MainActivity extends AppCompatActivity {
         }
         //series.setSpacing(0);
 
-        //series.setDataWidth(100);
-        //series.setDrawValuesOnTop(true);
+        series.setDataWidth(100);
+        series.setDrawValuesOnTop(true);
         //series.setValuesOnTopColor(Color.RED);
         graph.addSeries(series);
         graph.getViewport().setScrollable(true);

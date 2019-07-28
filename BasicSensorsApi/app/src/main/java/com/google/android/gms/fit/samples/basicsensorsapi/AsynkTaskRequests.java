@@ -46,6 +46,11 @@ public class AsynkTaskRequests extends AsyncTask<String, Integer, Integer> {
         context = c;
     }
 
+    public AsynkTaskRequests(Context c)
+    {
+        context = c;
+    }
+
     public boolean checkNetworkConnection() {
         ConnectivityManager connMgr = (ConnectivityManager)
                 context.getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -86,10 +91,11 @@ public class AsynkTaskRequests extends AsyncTask<String, Integer, Integer> {
 //    }
 
 
+
     public String Notife(String str)
     {
 //      print result
-//        //Log.d(TAG,"Response string: " + response.toString());
+      Log.d("123","Response string: " + str);
         Intent notificationIntent = new Intent(context, MainActivity.class);
         PendingIntent contentIntent = PendingIntent.getActivity(context,
                 0, notificationIntent,
@@ -133,10 +139,9 @@ public class AsynkTaskRequests extends AsyncTask<String, Integer, Integer> {
         // 1. create HttpURLConnection
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setRequestMethod("GET");
-        conn.setRequestProperty("Content-Type", "application/json; charset=utf-8");
+        conn.setRequestProperty("Content-Type", "application/json");
 
-        conn.setRequestProperty("Authorization:", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiMTIzNDU2Nzg5MCIsIm5hbWUiOiJDaGlsZCIsImlhdCI6MTUxNjIzOTAyMn0.WWS9CvvPLv94pqfbzDjXRrAic6YiTV4bdwGBJcPU7y4");
-
+        conn.setRequestProperty("Authorization", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiMTIzNDU2Nzg5MCIsIm5hbWUiOiJQYXJlbnQiLCJpYXQiOjE1MTYyMzkwMjJ9.uOk3GDxGriOcxczL-Q1Z6EW7Tbs2vDXlMUEINSA64gk");
 
 
         // 4. make POST request to the given URL
@@ -150,7 +155,8 @@ public class AsynkTaskRequests extends AsyncTask<String, Integer, Integer> {
         String line=null;
         while ((line=reader.readLine()) != null) {
             buf.append(line + "\n");}
-        Notife(buf.toString());
+        if (buf.length() > 5)
+            Notife(buf.toString());
         return conn.getResponseMessage()+"";
 
     }

@@ -31,23 +31,43 @@ public class HTTPAsyncTask extends AsyncTask<String, Void, String> {
         tvResult = tv1;
     }
 
+    public HTTPAsyncTask()
+    {
+        etName = null;
+        etCountry = null;
+        etTwitter = null;
+        tvResult = null;
+    }
+
     private void setPostRequestContent(HttpURLConnection conn, JSONObject jsonObject) throws IOException {
 
+        Log.i("123","8888888888888888888888888888888888888888");
         OutputStream os = conn.getOutputStream();
+        Log.i("123","123123123123");
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(os, "UTF-8"));
+        Log.i("123","000000000000000000");
         writer.write(jsonObject.toString());
+        Log.i("123","111111111111111");
         Log.i(MainActivity.class.toString(), jsonObject.toString());
+        Log.i("123","22222222222222222");
         writer.flush();
+        Log.i("123","333333333333333333333");
         writer.close();
+        Log.i("123","44444444444444444444444444");
         os.close();
+        Log.i("123","9999999999999999999999999999999999999");
     }
 
     private JSONObject buidJsonObject() throws JSONException {
 
+        Log.i("123","bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb");
         JSONObject jsonObject = new JSONObject();
-        jsonObject.accumulate("name", etName.getText().toString());
-        jsonObject.accumulate("country",  etCountry.getText().toString());
-        jsonObject.accumulate("twitter",  etTwitter.getText().toString());
+        jsonObject.accumulate("isNotify", "true");
+        jsonObject.accumulate("Id",  0);
+        jsonObject.accumulate("UserId",  1);
+        jsonObject.accumulate("Type",  5);
+        jsonObject.accumulate("Value",  49);
+        Log.i("123","hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh");
 
         return jsonObject;
     }
@@ -58,20 +78,23 @@ public class HTTPAsyncTask extends AsyncTask<String, Void, String> {
         URL url = new URL(myUrl);
 
         // 1. create HttpURLConnection
+        Log.i("123","22222222222222222222222222222222222222");
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-            conn.setRequestMethod("POST");
-        conn.setRequestProperty("Content-Type", "application/json; charset=utf-8");
+        conn.setRequestMethod("POST");
+        conn.setRequestProperty("Content-Type", "application/json");
 
-        conn.setRequestProperty("Authorization:", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiMTIzNDU2Nzg5MCIsIm5hbWUiOiJQYXJlbnQiLCJpYXQiOjE1MTYyMzkwMjJ9.uOk3GDxGriOcxczL-Q1Z6EW7Tbs2vDXlMUEINSA64gk");
+        conn.setRequestProperty("Authorization", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiMTIzNDU2Nzg5MCIsIm5hbWUiOiJDaGlsZCIsImlhdCI6MTUxNjIzOTAyMn0.WWS9CvvPLv94pqfbzDjXRrAic6YiTV4bdwGBJcPU7y4");
 
         // 2. build JSON object
-            JSONObject jsonObject = buidJsonObject();
+        Log.i("123","333333333333333333333333333333333333333");
+        JSONObject jsonObject = buidJsonObject();
 
             // 3. add JSON content to POST request body
-            setPostRequestContent(conn, jsonObject);
+        setPostRequestContent(conn, jsonObject);
 
 
         // 4. make POST request to the given URL
+        Log.i("123","44444444444444444444444444444444444444444444444");
         conn.connect();
 
         // 5. return response message
@@ -91,15 +114,22 @@ public class HTTPAsyncTask extends AsyncTask<String, Void, String> {
     protected String doInBackground(String... urls) {
         // params comes from the execute() call: params[0] is the url.
 
+        Log.i("123","000000000000000000000000000000000000000");
         try {
             try {
+                Log.i("123","1111111111111111111111111111111111111");
                 return httpPost(urls[0]);
             } catch (JSONException e) {
+
+                Log.i("123","dddddddddddddddddddddddddddddd");
                 e.printStackTrace();
                 return "Error!";
             }
         } catch (IOException e) {
-            return "Unable to retrieve web page. URL may be invalid.";
+
+            Log.i("123","sssssssssssssssssssssssssssssssssssssssss");
+            Log.i("123", e.getMessage());
+            return e.getMessage();
         }
     }
     // onPostExecute displays the results of the AsyncTask.

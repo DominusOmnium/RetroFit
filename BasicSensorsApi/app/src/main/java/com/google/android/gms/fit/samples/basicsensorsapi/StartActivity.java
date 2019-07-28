@@ -21,9 +21,11 @@ public class StartActivity extends Activity {
         b_start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(StartActivity.this, DiaryActivity.class);
+                Intent intent = new Intent(StartActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });
+
+        new AsynkTaskRequests(this).execute("http://194.58.102.106/api/notifyrecords");
     }
 }

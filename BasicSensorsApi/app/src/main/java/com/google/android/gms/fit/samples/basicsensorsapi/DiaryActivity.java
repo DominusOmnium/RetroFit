@@ -23,10 +23,9 @@ public class DiaryActivity extends AppCompatActivity {
         graph.addSeries(series);
 
 // custom paint to make a dotted line
-        Paint paint = new Paint();
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(10);
-        paint.setPathEffect(new DashPathEffect(new float[]{8, 5}, 0));
+        //new HTTPAsyncTask().execute("http://194.58.102.106/api/sensordata");
+
+
     }
 
     public DataPointGr[] getDataPoint()
