@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+    android:orientation="vertical"
+tools:context=".MainActivity">
+
+<TextView android:id="@+id/tvIsConnected"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+
+
+<EditText android:id="@+id/etName"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+
+
+
+<EditText android:id="@+id/etCountry"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+
+
+
+<EditText android:id="@+id/etTwitter"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+
+
+<Button
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:id="@+id/btnSend"
+android:text="Post"
+android:onClick="sendPost"/>
+
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/btnGet"
+    android:text="Get"
+    android:onClick="sendPost"/>
+
+<TextView android:id="@+id/tvResult"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"/>
+    </LinearLayout>

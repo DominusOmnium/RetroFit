@@ -1,0 +1,13 @@
+package com.google.android.gms.fit.samples.basicsensorsapi;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+
+public class CreateActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_create);
+    }
+}
