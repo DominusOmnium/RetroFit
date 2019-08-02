@@ -5,19 +5,225 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CheckData">
+    tools:context=".CheckData"
+    android:background="#FFFFFF">
 
     <TextView
         android:id="@+id/tv_chek_data"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/activity_horizontal_margin"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
         android:text="@string/check_title1"
-        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.05" />
+
+
+
+    <RelativeLayout
+        android:id="@+id/text_field_"
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.20"
+        android:background="@drawable/gray_backgr"
+        android:elevation="5dp"
+        android:outlineProvider="bounds">
+
+
+        <TextView
+            android:id="@+id/label"
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+            android:gravity="top"
+            android:text="Ваши ФИО"
+            android:textAppearance="@style/label" />
+
+        <TextView
+            android:id="@+id/input"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginBottom="10dp"
+            android:alpha="0.6"
+            android:text="Иванов Иван Иванович"
+            android:textAppearance="@style/input" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.375"
+        android:background="@drawable/gray_backgr"
+        android:elevation="5dp"
+        android:outlineProvider="bounds">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+            android:gravity="top"
+            android:text="Ваш полис ОМС"
+            android:textAppearance="@style/label" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginBottom="10dp"
+            android:alpha="0.6"
+            android:text="0000 0000 0000 0000"
+            android:textAppearance="@style/input" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.55"
+        android:background="@drawable/gray_backgr"
+        android:elevation="5dp"
+        android:outlineProvider="bounds">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+            android:gravity="top"
+            android:text="Ваш пол"
+            android:textAppearance="@style/label" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginBottom="10dp"
+            android:alpha="0.6"
+            android:text="Мужской"
+            android:textAppearance="@style/input" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.725"
+        android:background="@drawable/gray_backgr"
+        android:elevation="5dp"
+        android:outlineProvider="bounds">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+            android:gravity="top"
+            android:text="Дта рождения"
+            android:textAppearance="@style/label" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginBottom="10dp"
+            android:alpha="0.6"
+            android:text="27.05.1979"
+            android:textAppearance="@style/input" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/primary_col"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="@drawable/primary_col"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <View
+            android:id="@+id/back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/back" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center">
+
+            <View
+                android:layout_width="10sp"
+                android:layout_height="10sp"
+                android:background="@drawable/ellipse" />
+
+            <View
+                android:layout_width="15sp"
+                android:layout_height="15sp"
+                android:layout_marginLeft="3sp"
+                android:layout_marginRight="3sp"
+                android:background="@drawable/ellipse" />
+
+            <View
+                android:layout_width="10sp"
+                android:layout_height="10sp"
+                android:background="@drawable/ellipse" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/b_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:fontFamily="Roboto"
+            android:text="Далее"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp" />
+    </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

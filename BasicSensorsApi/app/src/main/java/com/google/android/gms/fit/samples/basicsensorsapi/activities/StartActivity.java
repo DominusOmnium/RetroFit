@@ -1,14 +1,12 @@
-package com.google.android.gms.fit.samples.basicsensorsapi;
+package com.google.android.gms.fit.samples.basicsensorsapi.activities;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
+
+import com.google.android.gms.fit.samples.basicsensorsapi.R;
 
 public class StartActivity extends Activity {
 
@@ -21,11 +19,9 @@ public class StartActivity extends Activity {
         b_start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(StartActivity.this, MainActivity.class);
+                Intent intent = new Intent(StartActivity.this, CreateActivity.class);
                 startActivity(intent);
             }
         });
-
-        new AsynkTaskRequests(this).execute("http://194.58.102.106/api/notifyrecords");
     }
 }

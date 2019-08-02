@@ -17,7 +17,8 @@ public class CheckData extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check_data);
-        mTextMessage = findViewById(R.id.message);
+
+        setTitle("Проверка данных");
     }
 
 }

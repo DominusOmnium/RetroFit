@@ -443,15 +443,5 @@ public class MainActivity extends AppCompatActivity {
         // Filter strips out everything except the message text.
         MessageOnlyLogFilter msgFilter = new MessageOnlyLogFilter();
         logWrapper.setNext(msgFilter);
-        // On screen logging via a customized TextView.
-        //LogView logView = (LogView) findViewById(R.id.sample_logview);
-
-        // Fixing this lint error adds logic without benefit.
-        // noinspection AndroidLintDeprecation
-        //logView.setTextAppearance(R.style.Log);
-
-        //logView.setBackgroundColor(Color.WHITE);
-        //msgFilter.setNext(logView);
-        //Log.i(TAG, "Ready.");
     }
 }
