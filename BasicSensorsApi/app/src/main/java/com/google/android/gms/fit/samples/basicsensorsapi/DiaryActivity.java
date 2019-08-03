@@ -24,8 +24,6 @@ public class DiaryActivity extends AppCompatActivity {
 
 // custom paint to make a dotted line
         //new HTTPAsyncTask().execute("http://194.58.102.106/api/sensordata");
-
-
     }
 
     public DataPointGr[] getDataPoint()

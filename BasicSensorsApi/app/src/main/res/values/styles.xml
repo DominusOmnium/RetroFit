@@ -17,8 +17,8 @@ limitations under the License.
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light">
-        <item name="colorPrimaryDark">#05348E</item>
-        <item name="colorPrimary">#053BA6</item>
+        <item name="colorPrimaryDark">#1fb4e0</item>
+        <item name="colorPrimary">#20c3f3</item>
     </style>
 
 

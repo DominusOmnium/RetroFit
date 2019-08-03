@@ -22,8 +22,9 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.15" />
     <!-- Создайте аккаунт для доступа в систему -->
+
     <TextView
-        android:id="@+id/N2"
+        android:id="@+id/n"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal|center_vertical"
@@ -42,7 +43,7 @@
         android:layout_height="40dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:background="#053ba6"
+        android:background="@color/maincolor"
         android:text="Войти с ЕМИАС"
         android:textColor="#fafafa"
         app:layout_constraintBottom_toTopOf="@+id/primary_col"
@@ -70,7 +71,7 @@
             android:layout_marginRight="10dp"
             android:text="ПРИВЯЗАТЬ TOUCH ID"
             android:textStyle="bold"
-            android:textColor="#053ba6"
+            android:textColor="@color/textcolor"
             android:textSize="18dp" />
 
         <ImageView
