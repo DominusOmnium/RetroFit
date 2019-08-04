@@ -13,6 +13,11 @@ import android.widget.Button;
 
 import com.google.android.gms.fit.samples.basicsensorsapi.R;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 public class StartActivity extends Activity {
 
     @Override
@@ -24,10 +29,9 @@ public class StartActivity extends Activity {
 
             @Override
             protected Boolean doInBackground(String... strings) {
-                String auth = "";
-                SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-                pref.getString("auth", auth);
-                if (auth == "")
+                SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                String auth = sp.getString("auth", "none");
+                if (auth == "none")
                     startActivity(new Intent(getApplicationContext(), CreateActivity.class));
                 else
                     startActivity(new Intent(getApplicationContext(), ActivityEnter.class).putExtra("auth", auth));

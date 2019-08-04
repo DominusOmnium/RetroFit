@@ -6,10 +6,14 @@ import android.os.AsyncTask;
 import android.preference.Preference;
 import android.preference.PreferenceManager;
 
+import com.google.android.gms.fit.samples.basicsensorsapi.activities.StartActivity;
+
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -187,8 +191,7 @@ public class AsyncRequest extends AsyncTask<String, Integer, Integer> {
             while ((line=reader.readLine()) != null) {
                 buf.append(line + "\n");}
             SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
-            pref.edit().putString("auth", buf.toString());
-            pref.edit().commit();
+            pref.edit().putString("auth", buf.toString()).commit();
         } catch (IOException e1) {
             e1.printStackTrace();
         }

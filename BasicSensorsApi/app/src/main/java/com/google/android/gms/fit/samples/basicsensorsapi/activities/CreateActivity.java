@@ -22,23 +22,20 @@ public class CreateActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create);
 
-        String title = "Создать аккаунт";
+        String title = "Регистрация";
         SpannableString s = new SpannableString(title);
         s.setSpan(new ForegroundColorSpan(Color.WHITE), 0, title.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         getSupportActionBar().setTitle(s);
 
-        final TextView b_next = findViewById(R.id.b_next);
         final Button b_signup = findViewById(R.id.b_signup);
 
         ((CheckBox)findViewById(R.id.cb_access)).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
-                    b_next.setTextColor(getResources().getColor(R.color.white));
                     b_signup.setTextColor(getResources().getColor(R.color.white));
                 }
                 else {
-                    b_next.setTextColor(getResources().getColor(R.color.disabledtext));
                     b_signup.setTextColor(getResources().getColor(R.color.disabledtext));
                 }
             }
@@ -47,13 +44,12 @@ public class CreateActivity extends AppCompatActivity {
         View.OnClickListener click  =    new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (b_next.getCurrentTextColor() == getResources().getColor(R.color.white )) {
-                    Intent intent = new Intent(CreateActivity.this, CheckData.class);
+                if (b_signup.getCurrentTextColor() == getResources().getColor(R.color.white )) {
+                    Intent intent = new Intent(CreateActivity.this, ActivityAccountReady.class);
                     startActivity(intent);
                 }
             }
         };
-        b_next.setOnClickListener(click);
         b_signup.setOnClickListener(click);
     }
 }
