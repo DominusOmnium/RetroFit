@@ -10,19 +10,19 @@
 
     <TextView
         android:id="@+id/N1"
-        android:layout_width="wrap_content"
-        android:layout_height="27dp"
-        app:layout_constraintBottom_toBottomOf="@id/N2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="352dp"
+        android:layout_height="36dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="112dp"
+        android:layout_marginTop="30dp"
+        android:gravity="center_horizontal|top"
         android:text="@string/N4"
         android:textAppearance="@style/N1"
-        android:gravity="center_horizontal|top"
-        />
+        android:textSize="26sp"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
     <!-- Создайте аккаунт для доступа в систему -->
     <TextView
         android:id="@+id/N2"
@@ -35,11 +35,10 @@
         android:text="@string/N5"
         android:textAppearance="@style/N2"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@id/N1"
-        app:layout_constraintVertical_bias="0.082" />
+        app:layout_constraintVertical_bias="0.102" />
 
     <Button
         android:id="@+id/b_inApp"
@@ -48,23 +47,79 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:background="@color/maincolor"
-        android:text="В приложение"
+        android:text="Посмотреть данные"
         android:textColor="#fafafa"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@id/N2"
-        app:layout_constraintVertical_bias="0.238" />
+        app:layout_constraintVertical_bias="0.206" />
 
-    <View
-        android:id="@+id/imageView"
-        android:layout_width="412dp"
-        android:layout_height="303dp"
+    <TextView
+        android:id="@+id/N3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center_horizontal|center_vertical"
+        android:lineSpacingExtra="4sp"
+        android:text="@string/N7"
+        android:textAppearance="@style/N2"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.55"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:background="@drawable/poloski" />
+        app:layout_constraintTop_toTopOf="@id/N1"
+        app:layout_constraintVertical_bias="0.387" />
+
+    <Button
+        android:id="@+id/b_setData"
+        android:layout_width="242dp"
+        android:layout_height="36dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/maincolor"
+        android:text="Настроить данные"
+        android:textColor="#fafafa"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/N3"
+        app:layout_constraintVertical_bias="0.199" />
+
+    <TextView
+        android:id="@+id/N"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center_horizontal|center_vertical"
+        android:lineSpacingExtra="4sp"
+        android:text="@string/N8"
+        android:textAppearance="@style/N2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/N1"
+        app:layout_constraintVertical_bias="0.606" />
+
+    <Button
+        android:id="@+id/b_setSource"
+        android:layout_width="242dp"
+        android:layout_height="36dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/maincolor"
+        android:text="Настроить источники"
+        android:textColor="#fafafa"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/N"
+        app:layout_constraintVertical_bias="0.306" />
 
 </android.support.constraint.ConstraintLayout>

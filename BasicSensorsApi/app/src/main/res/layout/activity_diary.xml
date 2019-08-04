@@ -1,13 +1,359 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DiaryActivity">
 
-    <com.graphview.GraphView
-        android:id="@+id/graph"
+    <ScrollView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-</RelativeLayout>
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/dia_press"
+                android:layout_width="48dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="436dp"
+                android:text="78"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                app:layout_constraintHorizontal_bias="0.611"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/pulse16"
+                android:layout_width="60dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="436dp"
+                android:text="80-90"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                app:layout_constraintHorizontal_bias="0.831"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="700dp"
+                app:layout_constraintHorizontal_bias="0.961"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/calendar" />
+
+            <com.graphview.GraphView
+            android:id="@+id/graph"
+            android:layout_width="wrap_content"
+            android:layout_height="157dp"
+            android:layout_marginTop="528dp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+            <com.graphview.GraphView
+                android:id="@+id/graph3"
+                android:layout_width="wrap_content"
+                android:layout_height="157dp"
+                android:layout_marginTop="740dp"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.graphview.GraphView
+            android:id="@+id/graph2"
+            android:layout_width="wrap_content"
+            android:layout_height="157dp"
+            android:layout_marginTop="96dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/pulse_date"
+            android:layout_width="112dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="264dp"
+            android:text="65 уд/мин"
+            android:textColor="@color/maincolor"
+            android:textSize="14sp"
+            app:layout_constraintHorizontal_bias="0.214"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/date_shuga"
+                android:layout_width="112dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="700dp"
+                android:text="(пт)26.07.2019"
+                android:textColor="@color/maincolor"
+                android:textSize="14sp"
+                app:layout_constraintHorizontal_bias="0.839"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/date_steps"
+                android:layout_width="112dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="488dp"
+                android:text="(пт)26.07.2019"
+                android:textColor="@color/maincolor"
+                android:textSize="14sp"
+                app:layout_constraintHorizontal_bias="0.839"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+            android:id="@+id/date_press"
+            android:layout_width="112dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="300dp"
+            android:text="(пт)26.07.2019"
+            android:textColor="@color/maincolor"
+            android:textSize="14sp"
+            app:layout_constraintHorizontal_bias="0.839"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/date_pulse"
+            android:layout_width="112dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="64dp"
+            android:text="(пт)26.07.2019"
+            android:textColor="@color/maincolor"
+            android:textSize="14sp"
+            app:layout_constraintHorizontal_bias="0.839"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/pulse3"
+            android:layout_width="48dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="264dp"
+            android:text="Пульс:"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            app:layout_constraintHorizontal_bias="0.044"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/pulse13"
+                android:layout_width="60dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="436dp"
+                android:text="125-140"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                app:layout_constraintHorizontal_bias="0.28"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/sis_press"
+                android:layout_width="48dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="436dp"
+                android:text="125"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                app:layout_constraintHorizontal_bias="0.068"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+            android:id="@+id/pulse"
+            android:layout_width="44dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="64dp"
+            android:text="Дата:"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            app:layout_constraintHorizontal_bias="0.564"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/pulse5"
+                android:layout_width="44dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="700dp"
+                android:text="Дата:"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                app:layout_constraintHorizontal_bias="0.564"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/pulse9"
+                android:layout_width="44dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="488dp"
+                android:text="Дата:"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                app:layout_constraintHorizontal_bias="0.564"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+            android:id="@+id/pulse7"
+            android:layout_width="44dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="300dp"
+            android:text="Дата:"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            app:layout_constraintHorizontal_bias="0.564"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/pulse2"
+            android:layout_width="120dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="64dp"
+            android:text="Ваш пульс"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintHorizontal_bias="0.054"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/pulse4"
+            android:layout_width="160dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="488dp"
+            android:text="Ваши шаги"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintHorizontal_bias="0.063"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/pulse8"
+                android:layout_width="200dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="700dp"
+                android:text="Уровень сахара"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintHorizontal_bias="0.063"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+            android:id="@+id/pulse6"
+            android:layout_width="160dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="300dp"
+            android:text="Ваше давление"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintHorizontal_bias="0.063"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/pulse10"
+                android:layout_width="160dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="344dp"
+                android:text="Систолическое"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                app:layout_constraintHorizontal_bias="0.063"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/pulse11"
+                android:layout_width="160dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="344dp"
+                android:text="Диастолическое"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                app:layout_constraintHorizontal_bias="0.824"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            app:layout_constraintHorizontal_bias="0.959"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/calendar" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="488dp"
+                app:layout_constraintHorizontal_bias="0.961"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/calendar" />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="300dp"
+                app:layout_constraintHorizontal_bias="0.961"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/calendar" />
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

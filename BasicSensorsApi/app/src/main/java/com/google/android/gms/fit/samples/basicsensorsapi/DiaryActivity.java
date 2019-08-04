@@ -5,6 +5,9 @@ import android.graphics.DashPathEffect;
 import android.graphics.Paint;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
 
 import com.graphview.GraphView;
 import com.graphview.series.DataPointGr;
@@ -16,6 +19,11 @@ public class DiaryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_diary);
+
+        String title = "Мой дневник";
+        SpannableString s = new SpannableString(title);
+        s.setSpan(new ForegroundColorSpan(Color.WHITE), 0, title.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        getSupportActionBar().setTitle(s);
 
         GraphView graph = findViewById(R.id.graph);
         LineGraphSeries<DataPointGr> series = new LineGraphSeries<>(getDataPoint());

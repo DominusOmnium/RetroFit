@@ -20,7 +20,7 @@ public class ActivityAccountReady extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account_ready);
 
-        String title = "Аккаунт готов";
+        String title = "Готово";
         SpannableString s = new SpannableString(title);
         s.setSpan(new ForegroundColorSpan(Color.WHITE), 0, title.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         getSupportActionBar().setTitle(s);

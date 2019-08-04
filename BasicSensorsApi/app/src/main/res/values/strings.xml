@@ -26,11 +26,16 @@
     <string name="N2">Создайте аккаунт для доступа в\nсистему Забота+</string>
     <string name="N3">Не можете войти?\nСообщить об ошибке</string>
     <string name="N4">Отлично! Ваш аккаунт готов!</string>
-    <string name="N5">Вы можете пользоваться\nЗАБОТА+.\nСпасибо за регистрацию!</string>
+    <string name="N5">Актуальные данные теперь всегда\nдоступны вам и вашему лечащему врачу\nв вашей электронной медицинской карте ЕМИАС.\nДаже если приложение не запущено.\nВы можете изменить это в настройках.</string>
     <string name="title_activity_check_data">CheckData</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="check_title1">Проверьте ваши данные</string>
     <string name="N6">Согласен загрузить данные из ЕМИАС</string>
+    <string name="N10">Добро пожаловать, Иван!</string>
+    <string name="N11">Это вы?</string>
+    <string name="N12">Войти в другой аккаунт</string>
+    <string name="N7">В приложении “Здоровье” вы можете выбрать данные,\nкоторые хотите добавить или убрать из своей\nмедицинской карты ЕМИАС</string>
+    <string name="N8">В приложении “Здоровье” Вы можете обновлять\nданные вручную, добавлять из других приложений или\nустройств и аксессуаров</string>
 </resources>

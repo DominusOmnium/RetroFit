@@ -41,33 +41,23 @@ public class HTTPAsyncTask extends AsyncTask<String, Void, String> {
 
     private void setPostRequestContent(HttpURLConnection conn, JSONObject jsonObject) throws IOException {
 
-        Log.i("123","8888888888888888888888888888888888888888");
         OutputStream os = conn.getOutputStream();
-        Log.i("123","123123123123");
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(os, "UTF-8"));
-        Log.i("123","000000000000000000");
         writer.write(jsonObject.toString());
-        Log.i("123","111111111111111");
         Log.i(MainActivity.class.toString(), jsonObject.toString());
-        Log.i("123","22222222222222222");
         writer.flush();
-        Log.i("123","333333333333333333333");
         writer.close();
-        Log.i("123","44444444444444444444444444");
         os.close();
-        Log.i("123","9999999999999999999999999999999999999");
     }
 
     private JSONObject buidJsonObject() throws JSONException {
 
-        Log.i("123","bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb");
         JSONObject jsonObject = new JSONObject();
         jsonObject.accumulate("isNotify", "true");
         jsonObject.accumulate("Id",  0);
         jsonObject.accumulate("UserId",  1);
         jsonObject.accumulate("Type",  5);
         jsonObject.accumulate("Value",  49);
-        Log.i("123","hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh");
 
         return jsonObject;
     }
@@ -78,7 +68,6 @@ public class HTTPAsyncTask extends AsyncTask<String, Void, String> {
         URL url = new URL(myUrl);
 
         // 1. create HttpURLConnection
-        Log.i("123","22222222222222222222222222222222222222");
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setRequestMethod("POST");
         conn.setRequestProperty("Content-Type", "application/json");
@@ -86,7 +75,6 @@ public class HTTPAsyncTask extends AsyncTask<String, Void, String> {
         conn.setRequestProperty("Authorization", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiMTIzNDU2Nzg5MCIsIm5hbWUiOiJDaGlsZCIsImlhdCI6MTUxNjIzOTAyMn0.WWS9CvvPLv94pqfbzDjXRrAic6YiTV4bdwGBJcPU7y4");
 
         // 2. build JSON object
-        Log.i("123","333333333333333333333333333333333333333");
         JSONObject jsonObject = buidJsonObject();
 
             // 3. add JSON content to POST request body
@@ -94,7 +82,6 @@ public class HTTPAsyncTask extends AsyncTask<String, Void, String> {
 
 
         // 4. make POST request to the given URL
-        Log.i("123","44444444444444444444444444444444444444444444444");
         conn.connect();
 
         // 5. return response message
@@ -114,21 +101,16 @@ public class HTTPAsyncTask extends AsyncTask<String, Void, String> {
     protected String doInBackground(String... urls) {
         // params comes from the execute() call: params[0] is the url.
 
-        Log.i("123","000000000000000000000000000000000000000");
         try {
             try {
-                Log.i("123","1111111111111111111111111111111111111");
                 return httpPost(urls[0]);
             } catch (JSONException e) {
 
-                Log.i("123","dddddddddddddddddddddddddddddd");
                 e.printStackTrace();
                 return "Error!";
             }
         } catch (IOException e) {
 
-            Log.i("123","sssssssssssssssssssssssssssssssssssssssss");
-            Log.i("123", e.getMessage());
             return e.getMessage();
         }
     }
