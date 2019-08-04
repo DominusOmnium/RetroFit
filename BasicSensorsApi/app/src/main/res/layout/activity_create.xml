@@ -16,11 +16,11 @@
         android:text="@string/N1"
         android:textAppearance="@style/N1"
         android:textSize="22sp"
-        app:layout_constraintBottom_toTopOf="@+id/primary_col"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.15" />
+        app:layout_constraintVertical_bias="0.1" />
     <!-- Создайте аккаунт для доступа в систему -->
 
     <TextView
@@ -31,55 +31,154 @@
         android:lineSpacingExtra="4sp"
         android:text="@string/N2"
         android:textAppearance="@style/N2"
-        app:layout_constraintBottom_toTopOf="@id/N3"
+        app:layout_constraintBottom_toTopOf="@id/b_signup"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/N1"
-        app:layout_constraintVertical_bias="0.15" />
+        app:layout_constraintVertical_bias="0.05" />
+
+    <RelativeLayout
+        android:id="@+id/text_field_"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/gray_backgr"
+        android:elevation="2dp"
+        android:outlineProvider="bounds"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.325">
+
+
+        <TextView
+            android:id="@+id/label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:gravity="top"
+            android:text="Ваши ФИО"
+            android:textAppearance="@style/label" />
+
+        <EditText
+            android:id="@+id/input_name"
+            android:textColorHighlight="@color/maincolor"
+            android:textColorLink="@color/maincolor"
+            android:textCursorDrawable="@color/maincolor"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginBottom="5dp"
+            android:alpha="0.6"
+            android:hint="Иванов Иван Иванович"
+            android:textAppearance="@style/input" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/gray_backgr"
+        android:elevation="2dp"
+        android:outlineProvider="bounds"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.475">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:gravity="top"
+            android:text="Дта рождения"
+            android:textAppearance="@style/label" />
+
+        <EditText
+            android:id="@+id/input_date"
+            android:textCursorDrawable="@color/maincolor"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginBottom="5dp"
+            android:alpha="0.6"
+            android:hint="21.05.1979"
+            android:textAppearance="@style/input" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/gray_backgr"
+        android:elevation="2dp"
+        android:outlineProvider="bounds"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.625">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:gravity="top"
+            android:text="Ваш полис ОМС"
+            android:textAppearance="@style/label" />
+
+        <EditText
+            android:id="@+id/input_oms"
+            android:textCursorDrawable="@color/maincolor"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginBottom="5dp"
+            android:alpha="0.6"
+            android:hint="0000 0000 0000 0000"
+            android:textAppearance="@style/input" />
+    </RelativeLayout>
+
+
+    <CheckBox
+        android:id="@+id/cb_access"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Согласен загрузить данные в ЕМИАС"
+        app:layout_constraintBottom_toTopOf="@id/b_signup"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/n"
+        app:layout_constraintVertical_bias="0.95" />
 
     <Button
-        android:id="@+id/N3"
-        android:layout_width="275dp"
+        android:id="@+id/b_signup"
+        android:layout_width="250dp"
         android:layout_height="40dp"
+        android:textSize="20sp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:background="@color/maincolor"
         android:text="Войти с ЕМИАС"
-        android:textColor="#fafafa"
-        app:layout_constraintBottom_toTopOf="@+id/primary_col"
+        android:textColor="@color/disabledtext"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.60" />
-
-    <LinearLayout
-        android:id="@+id/N6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/N3">
-
-        <TextView xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/N4"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:gravity="center_horizontal|center_vertical"
-            android:layout_marginRight="10dp"
-            android:text="ПРИВЯЗАТЬ TOUCH ID"
-            android:textStyle="bold"
-            android:textColor="@color/textcolor"
-            android:textSize="18dp" />
-
-        <ImageView
-            android:id="@+id/N5"
-            android:layout_width="40sp"
-            android:layout_height="40sp"
-            android:src="@drawable/finger2x" />
-    </LinearLayout>
+        app:layout_constraintVertical_bias="0.85" />
 
     <!-- Label -->
     <TextView
@@ -94,70 +193,11 @@
         android:text="@string/N3"
         android:textAppearance="@style/N3"
         android:textColor="#053ba6"
-        app:layout_constraintBottom_toTopOf="@+id/primary_col"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/N6"
-        app:layout_constraintVertical_bias="0.6" />
-
-    <RelativeLayout
-        android:id="@+id/primary_col"
-        android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:background="@drawable/primary_col"
-        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
-
-        <View
-            android:id="@+id/back"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="15dp"
-            android:layout_marginLeft="15dp"
-            android:background="@drawable/back" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:gravity="center">
-
-            <View
-                android:layout_width="15sp"
-                android:layout_height="15sp"
-                android:background="@drawable/ellipse" />
-
-            <View
-                android:layout_width="10sp"
-                android:layout_height="10sp"
-                android:layout_marginLeft="3sp"
-                android:layout_marginRight="3sp"
-                android:background="@drawable/ellipse" />
-
-            <View
-                android:layout_width="10sp"
-                android:layout_height="10sp"
-                android:background="@drawable/ellipse" />
-        </LinearLayout>
-
-
-        <TextView
-            android:id="@+id/b_next"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="15dp"
-            android:fontFamily="Roboto"
-            android:text="Далее"
-            android:textColor="#FFFFFF"
-            android:textSize="22sp" />
-    </RelativeLayout>
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/b_signup"
+        app:layout_constraintVertical_bias="0.5" />
 
 
 </android.support.constraint.ConstraintLayout>

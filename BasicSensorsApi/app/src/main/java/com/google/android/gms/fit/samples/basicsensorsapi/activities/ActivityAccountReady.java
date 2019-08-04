@@ -1,4 +1,4 @@
-package com.google.android.gms.fit.samples.basicsensorsapi;
+package com.google.android.gms.fit.samples.basicsensorsapi.activities;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -10,8 +10,9 @@ import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.widget.Button;
 
-import com.google.android.gms.fit.samples.basicsensorsapi.activities.CreateActivity;
-import com.google.android.gms.fit.samples.basicsensorsapi.activities.StartActivity;
+import com.google.android.gms.fit.samples.basicsensorsapi.DiaryActivity;
+import com.google.android.gms.fit.samples.basicsensorsapi.MainActivity;
+import com.google.android.gms.fit.samples.basicsensorsapi.R;
 
 public class ActivityAccountReady extends AppCompatActivity {
 
@@ -29,7 +30,7 @@ public class ActivityAccountReady extends AppCompatActivity {
         b_inApp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ActivityAccountReady.this, MainActivity.class);
+                Intent intent = new Intent(ActivityAccountReady.this, DiaryActivity.class);
                 startActivity(intent);
             }
         });

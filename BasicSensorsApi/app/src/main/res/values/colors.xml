@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="disabledtext">#8fe1f9</color>
     <color name="white">#FFFFFF</color>
     <color name="maincolor">#20c3f3</color>
     <color name="maindarkcolor">#1fb4e0</color>

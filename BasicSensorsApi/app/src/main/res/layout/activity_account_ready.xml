@@ -121,5 +121,6 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@id/N"
         app:layout_constraintVertical_bias="0.306" />
+        android:background="@drawable/frame" />
 
 </android.support.constraint.ConstraintLayout>

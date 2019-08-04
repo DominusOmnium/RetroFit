@@ -1,7 +1,6 @@
 package com.google.android.gms.fit.samples.basicsensorsapi.activities;
 
 import android.content.Intent;
-import android.content.res.Resources;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,13 +8,12 @@ import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
-import android.widget.Toolbar;
 
-import com.google.android.gms.fit.samples.basicsensorsapi.CheckData;
 import com.google.android.gms.fit.samples.basicsensorsapi.R;
-
-import java.util.Locale;
 
 public class CreateActivity extends AppCompatActivity {
 
@@ -23,23 +21,35 @@ public class CreateActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create);
-//        setTitle("Создать аккаунт");
-//        setTitleColor(getResources().getColor(R.color.white));
 
-        String title = "Создать аккаунт";
+        String title = "Регистрация";
         SpannableString s = new SpannableString(title);
         s.setSpan(new ForegroundColorSpan(Color.WHITE), 0, title.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         getSupportActionBar().setTitle(s);
 
-        int orange = getResources().getColor(R.color.white);
-        String htmlColor = String.format(Locale.US, "#%06X", (0xFFFFFF & Color.argb(0, Color.red(orange), Color.green(orange), Color.blue(orange))));
+        final Button b_signup = findViewById(R.id.b_signup);
 
-        findViewById(R.id.b_next).setOnClickListener(new View.OnClickListener() {
+        ((CheckBox)findViewById(R.id.cb_access)).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(CreateActivity.this, CheckData.class);
-                startActivity(intent);
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    b_signup.setTextColor(getResources().getColor(R.color.white));
+                }
+                else {
+                    b_signup.setTextColor(getResources().getColor(R.color.disabledtext));
+                }
             }
         });
+
+        View.OnClickListener click  =    new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (b_signup.getCurrentTextColor() == getResources().getColor(R.color.white )) {
+                    Intent intent = new Intent(CreateActivity.this, ActivityAccountReady.class);
+                    startActivity(intent);
+                }
+            }
+        };
+        b_signup.setOnClickListener(click);
     }
 }
