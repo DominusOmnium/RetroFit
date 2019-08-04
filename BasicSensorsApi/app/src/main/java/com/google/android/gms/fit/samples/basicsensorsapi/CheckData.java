@@ -1,4 +1,4 @@
-package com.google.android.gms.fit.samples.basicsensorsapi.activities;
+package com.google.android.gms.fit.samples.basicsensorsapi;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -17,8 +17,7 @@ import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.google.android.gms.fit.samples.basicsensorsapi.AsyncRequest;
-import com.google.android.gms.fit.samples.basicsensorsapi.R;
+import com.google.android.gms.fit.samples.basicsensorsapi.activities.ActivityAccountReady;
 import com.redmadrobot.inputmask.MaskedTextChangedListener;
 
 import org.json.JSONException;

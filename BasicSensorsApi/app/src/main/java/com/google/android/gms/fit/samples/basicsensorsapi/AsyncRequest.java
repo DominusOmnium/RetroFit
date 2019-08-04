@@ -184,11 +184,11 @@ public class AsyncRequest extends AsyncTask<String, Integer, Integer> {
         try {
             responseCode = connection.getResponseCode();
 
-            BufferedReader reader=null;
+            BufferedReader reader = null;
             reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-            StringBuilder buf=new StringBuilder();
-            String line=null;
-            while ((line=reader.readLine()) != null) {
+            StringBuilder buf = new StringBuilder();
+            String line = null;
+            while ((line = reader.readLine()) != null) {
                 buf.append(line + "\n");}
             SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
             pref.edit().putString("auth", buf.toString()).commit();
