@@ -20,7 +20,7 @@
     <string name="action_update_session">Update step count data</string>
     <string name="action_delete_session">Delete step count data</string>
     <string name="action_settings">Settings</string>
-    <string name="tv_name">ЗАБОТА+</string>
+    <string name="tv_name">ЗАБОТА</string>
     <string name="b_start">НАЧАТЬ</string>
     <string name="N1">Добро пожаловать!</string>
     <string name="N2">Создайте аккаунт для доступа в\nсистему Забота+</string>
@@ -33,4 +33,7 @@
     <string name="title_notifications">Notifications</string>
     <string name="check_title1">Проверьте ваши данные</string>
     <string name="N6">Согласен загрузить данные из ЕМИАС</string>
+    <string name="N10">Добро пожаловать, Иван!</string>
+    <string name="N11">Это вы?</string>
+    <string name="N12">Войти в другой аккаунт</string>
 </resources>

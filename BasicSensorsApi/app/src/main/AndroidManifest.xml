@@ -14,13 +14,13 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
-        <activity android:name=".ConnectToDevice">
-        </activity>
-        <activity android:name=".DiaryActivity"></activity>
-        <activity android:name=".ActivityAccountReady" />
+        <activity android:name=".activities.ActivityEnter"></activity>
+        <activity android:name=".ConnectToDevice"></activity>
+        <activity android:name=".DiaryActivity" />
+        <activity android:name=".activities.ActivityAccountReady" />
         <activity android:name=".activities.CreateActivity" />
         <activity
-            android:name=".CheckData"
+            android:name=".activities.CheckData"
             android:label="@string/title_activity_check_data" />
         <activity android:name=".activities.StartActivity">
             <intent-filter>
