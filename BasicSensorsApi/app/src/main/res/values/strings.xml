@@ -37,8 +37,12 @@
     <string name="N12">Войти в другой аккаунт</string>
     <string name="N7">В приложении “Здоровье” вы можете выбрать данные,\nкоторые хотите добавить или убрать из своей\nмедицинской карты ЕМИАС</string>
     <string name="N8">В приложении “Здоровье” Вы можете обновлять\nданные вручную, добавлять из других приложений или\nустройств и аксессуаров</string>
+<<<<<<< HEAD
     <string name="title_activity_profile">profile</string>
     <string name="title_profile">Профиль</string>
     <string name="title_data">Данные</string>
     <string name="title_sources">Источники</string>
+=======
+    <string name="error">Введённые данные некорректны</string>
+>>>>>>> 47edf4304390bd28db4405f805cdc08626c91115
 </resources>

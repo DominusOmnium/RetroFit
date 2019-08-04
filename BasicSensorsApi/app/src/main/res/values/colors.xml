@@ -5,5 +5,9 @@
     <color name="maincolor">#20c3f3</color>
     <color name="maindarkcolor">#1fb4e0</color>
     <color name="textcolor">#404041</color>
+<<<<<<< HEAD
     <color name="field_color">#fafafa</color>
+=======
+    <color name="error">#EB5757</color>
+>>>>>>> 47edf4304390bd28db4405f805cdc08626c91115
 </resources>

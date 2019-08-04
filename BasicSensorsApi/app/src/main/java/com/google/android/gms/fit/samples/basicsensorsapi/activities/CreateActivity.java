@@ -67,18 +67,26 @@ public class CreateActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (b_signup.getCurrentTextColor() == getResources().getColor(R.color.disabledtext))
                     return;
-                if (in_date.length() != 10 || in_oms.length() != 19 || in_name.)
-                JSONObject data = null;
-                try {
-                    data = buidJsonObject(in_oms.getText().toString(), in_date.getText().toString());
-                    if (data != null)
-                        new AsyncRequest(getApplicationContext(), "https://test-api.mosmedzdrav.ru/zabota/api/register", data).execute();
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                } catch (NoSuchAlgorithmException e) {
-                    e.printStackTrace();
-                } catch (UnsupportedEncodingException e) {
-                    e.printStackTrace();
+                if (in_date.getText().toString().length() != 10 ||
+                        in_oms.getText().toString().length() != 19 ||
+                        (in_name.getText().toString().split(" ").length != 3))
+                {
+                    findViewById(R.id.ll_error).setVisibility(View.VISIBLE);
+                }
+                else {
+                    findViewById(R.id.ll_error).setVisibility(View.INVISIBLE);
+                    JSONObject data = null;
+                    try {
+                        data = buidJsonObject(in_oms.getText().toString(), in_date.getText().toString());
+                        if (data != null)
+                            new AsyncRequest(getApplicationContext(), "https://test-api.mosmedzdrav.ru/zabota/api/register", data).execute();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    } catch (NoSuchAlgorithmException e) {
+                        e.printStackTrace();
+                    } catch (UnsupportedEncodingException e) {
+                        e.printStackTrace();
+                    }
                 }
 
                 //Intent intent = new Intent(CreateActivity.this, ActivityProfile.class);
