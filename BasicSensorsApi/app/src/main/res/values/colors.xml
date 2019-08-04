@@ -5,4 +5,5 @@
     <color name="maincolor">#20c3f3</color>
     <color name="maindarkcolor">#1fb4e0</color>
     <color name="textcolor">#404041</color>
+    <color name="error">#EB5757</color>
 </resources>
