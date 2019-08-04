@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".profile">
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+    <TableLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:stretchColumns="*"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="200dp">
+        <TableRow android:paddingBottom="30dp">
+
+            <TextView
+                android:layout_height="match_parent"
+                android:background="@color/field_color"
+                android:gravity="center"
+                android:text="Данные"
+                android:textColor="@color/textcolor"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+            <View
+                android:background="@drawable/A"
+                android:layout_height="match_parent"
+                android:layout_width="10dp"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:background="@color/field_color"
+                android:gravity="center"
+                android:text="Показатели"
+                android:textColor="@color/textcolor"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_height="match_parent"
+                android:background="@color/field_color"
+                android:gravity="center"
+                android:text="Измерения"
+                android:textColor="@color/textcolor"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:background="@color/field_color"
+                android:gravity="center"
+                android:text="Передано"
+                android:textColor="@color/textcolor"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow android:paddingBottom="30dp">
+
+            <TextView
+                android:layout_height="match_parent"
+                android:background="@color/field_color"
+                android:gravity="center"
+                android:text="Давление\n"
+                android:textColor="@color/textcolor"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/A" />
+
+            <TextView
+                android:layout_height="match_parent"
+                android:background="@color/field_color"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/textcolor"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_height="match_parent"
+                android:background="@color/field_color"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/textcolor"
+                android:textSize="16sp" />
+
+            <TextView
+                android:background="@color/field_color"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/textcolor"
+                android:textSize="16sp" />
+        </TableRow>
+        <TableRow android:paddingBottom="30dp">
+
+            <TextView
+                android:layout_height="match_parent"
+                android:background="@color/field_color"
+                android:gravity="center"
+                android:text="Пульс"
+                android:textColor="@color/textcolor"
+                android:textSize="16sp" />
+            <View
+                android:background="@drawable/A"
+                android:layout_height="match_parent"
+                android:layout_width="10dp"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:background="@color/field_color"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/textcolor"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_height="match_parent"
+                android:background="@color/field_color"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/textcolor"
+                android:textSize="16sp" />
+
+            <TextView
+                android:background="@color/field_color"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/textcolor"
+                android:textSize="16sp" />
+        </TableRow>
+        <TableRow android:paddingBottom="30dp">
+
+            <TextView
+                android:layout_height="match_parent"
+                android:background="@color/field_color"
+                android:gravity="center"
+                android:text="Шаги"
+                android:textColor="@color/textcolor"
+                android:textSize="16sp" />
+            <View
+                android:background="@drawable/A"
+                android:layout_height="match_parent"
+                android:layout_width="10dp"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:background="@color/field_color"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/textcolor"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_height="match_parent"
+                android:background="@color/field_color"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/textcolor"
+                android:textSize="16sp" />
+
+            <TextView
+                android:background="@color/field_color"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/textcolor"
+                android:textSize="16sp" />
+        </TableRow>
+        <TableRow android:paddingBottom="30dp">
+
+            <TextView
+                android:layout_height="match_parent"
+                android:background="@color/field_color"
+                android:gravity="center"
+                android:text="Вес"
+                android:textColor="@color/textcolor"
+                android:textSize="16sp" />
+            <View
+                android:background="@drawable/A"
+                android:layout_height="match_parent"
+                android:layout_width="10dp"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:background="@color/field_color"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/textcolor"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_height="match_parent"
+                android:background="@color/field_color"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/textcolor"
+                android:textSize="16sp" />
+
+            <TextView
+                android:background="@color/field_color"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/textcolor"
+                android:textSize="16sp" />
+        </TableRow>
+
+
+    </TableLayout>
+
+
+</android.support.constraint.ConstraintLayout>
