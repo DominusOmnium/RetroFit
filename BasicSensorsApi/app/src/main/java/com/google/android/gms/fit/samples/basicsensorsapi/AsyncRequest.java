@@ -8,6 +8,7 @@ import android.preference.PreferenceManager;
 
 import com.google.android.gms.fit.samples.basicsensorsapi.activities.StartActivity;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -48,12 +49,34 @@ public class AsyncRequest extends AsyncTask<String, Integer, Integer> {
     static Context context;
     static String adress;
     static JSONObject data;
+    static String auth;
+    int type;
 
     public AsyncRequest(Context c, String addr, JSONObject d)
     {
         context = c;
         adress = addr;
         data = d;
+        auth = null;
+        type = 0;
+    }
+
+    public AsyncRequest(Context c, String addr, JSONObject d, String a)
+    {
+        context = c;
+        adress = addr;
+        data = d;
+        auth = a;
+        type = 0;
+    }
+
+    public AsyncRequest(Context c, String addr, JSONObject d, String a, int i)
+    {
+        context = c;
+        adress = addr;
+        data = d;
+        auth = a;
+        type = i;
     }
 
 
@@ -174,6 +197,8 @@ public class AsyncRequest extends AsyncTask<String, Integer, Integer> {
         //REQUEST
         try {
             connection.setRequestProperty("Content-type", "application/json");
+            if (auth != null)
+                connection.setRequestProperty("Authorization", auth);
             setPostRequestContent(connection, data);
         } catch (IOException e) {
             e.printStackTrace();
@@ -189,10 +214,14 @@ public class AsyncRequest extends AsyncTask<String, Integer, Integer> {
             StringBuilder buf = new StringBuilder();
             String line = null;
             while ((line = reader.readLine()) != null) {
-                buf.append(line + "\n");}
-            SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
-            pref.edit().putString("auth", buf.toString()).commit();
-        } catch (IOException e1) {
+                buf.append(line);}
+            if (auth == null) {
+                JSONObject jobj = new JSONObject(buf.toString());
+
+                SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
+                pref.edit().putString("auth", (String) jobj.get("auth")).commit();
+            }
+        } catch (IOException | JSONException e1) {
             e1.printStackTrace();
         }
 

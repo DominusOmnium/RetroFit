@@ -197,7 +197,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:background="@color/maincolor"
-        android:text="Войти с ЕМИАС"
+        android:text="Подключиться"
         android:textColor="@color/disabledtext"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

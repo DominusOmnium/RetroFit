@@ -11,9 +11,11 @@
     <application
         android:allowBackup="false"
         android:fullBackupContent="false"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/emiaslogo"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
+        <activity android:name=".activities.profile"
+            android:screenOrientation="portrait"></activity>
         <activity android:name=".activities.ActivityEnter"
             android:screenOrientation="portrait"></activity>
         <activity android:name=".ConnectToDevice"

@@ -11,8 +11,11 @@ import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 import android.view.View;
+import android.widget.TextView;
 
 import com.google.android.gms.fit.samples.basicsensorsapi.R;
+
+import org.w3c.dom.Text;
 
 public class ActivityEnter extends AppCompatActivity {
 
@@ -29,14 +32,16 @@ public class ActivityEnter extends AppCompatActivity {
         findViewById(R.id.b_login).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //startActivity(new Intent(getApplicationContext(), ActivityProfile.class));
+                startActivity(new Intent(getApplicationContext(), profile.class));
             }
         });
+
+        ((TextView)findViewById(R.id.textView4)).setText("Добро пожаловать, " + PreferenceManager.getDefaultSharedPreferences(this).getString("FIO", "1 Олег 1").split(" ")[1] + "!");
 
         findViewById(R.id.tv_enother_acc).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(ActivityEnter.this, R.style.Theme_AppCompat_Dialog_Alert);
+                AlertDialog.Builder builder = new AlertDialog.Builder(ActivityEnter.this, R.style.Theme_AppCompat_Light_Dialog_MinWidth);
                 builder.setTitle("Выход")
                         .setMessage("Выйти?")
                         .setCancelable(false)

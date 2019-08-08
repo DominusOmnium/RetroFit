@@ -3,6 +3,7 @@ package com.google.android.gms.fit.samples.basicsensorsapi.activities;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
+import android.preference.PreferenceManager;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -34,6 +35,8 @@ import java.security.NoSuchAlgorithmException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+
+import static com.google.android.gms.fit.samples.basicsensorsapi.activities.ServerUtils.buidJsonObjectAuth;
 
 public class CreateActivity extends AppCompatActivity {
 
@@ -74,10 +77,11 @@ public class CreateActivity extends AppCompatActivity {
                     findViewById(R.id.ll_error).setVisibility(View.VISIBLE);
                 }
                 else {
+                    PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putString("FIO", in_name.getText().toString()).commit();
                     findViewById(R.id.ll_error).setVisibility(View.INVISIBLE);
                     JSONObject data = null;
                     try {
-                        data = buidJsonObject(in_oms.getText().toString(), in_date.getText().toString());
+                        data = buidJsonObjectAuth(in_oms.getText().toString(), in_date.getText().toString());
                         if (data != null)
                             new AsyncRequest(getApplicationContext(), "https://test-api.mosmedzdrav.ru/zabota/api/register", data).execute();
                     } catch (JSONException e) {
@@ -87,10 +91,10 @@ public class CreateActivity extends AppCompatActivity {
                     } catch (UnsupportedEncodingException e) {
                         e.printStackTrace();
                     }
-                }
 
-                //Intent intent = new Intent(CreateActivity.this, ActivityProfile.class);
-                //startActivity(intent);
+                    Intent intent = new Intent(CreateActivity.this, ActivityAccountReady.class);
+                    startActivity(intent);
+                }
             }
         });
 
@@ -123,31 +127,5 @@ public class CreateActivity extends AppCompatActivity {
     }
 
 
-    private JSONObject buidJsonObject(String oms, String date) throws JSONException, NoSuchAlgorithmException, UnsupportedEncodingException {
 
-        String value = oms.replace(" ", "") + date;
-
-        Date c = Calendar.getInstance().getTime();
-        SimpleDateFormat df = new SimpleDateFormat("dd.MM.yyyy");
-        String formattedDate = df.format(c);
-
-        String check_val = value + formattedDate + "Zabota+";
-
-        MessageDigest md = MessageDigest.getInstance("SHA-256");
-        md.update(check_val.getBytes("UTF-8"));
-        byte[] cv = md.digest();
-        StringBuilder sb = new StringBuilder();
-        for (byte b : cv) {
-            sb.append(String.format("%02x", b));
-        }
-        String ChallengeVerification = sb.toString();
-
-        byte[] data = value.getBytes("UTF-8");
-        String Base64Value = Base64.encodeToString(data, Base64.NO_WRAP);
-
-        JSONObject jsonObject = new JSONObject();
-        jsonObject.accumulate("Challenge", Base64Value + "." + ChallengeVerification);
-
-        return jsonObject;
-    }
 }

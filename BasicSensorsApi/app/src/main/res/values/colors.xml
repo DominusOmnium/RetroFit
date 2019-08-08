@@ -2,12 +2,12 @@
 <resources>
     <color name="disabledtext">#8fe1f9</color>
     <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
     <color name="maincolor">#20c3f3</color>
     <color name="maindarkcolor">#1fb4e0</color>
-    <color name="textcolor">#404041</color>
-<<<<<<< HEAD
+    <color name="textcolor_dark">#404041</color>
+    <color name="textcolor_light">#9B9B9B</color>
     <color name="field_color">#fafafa</color>
-=======
     <color name="error">#EB5757</color>
->>>>>>> 47edf4304390bd28db4405f805cdc08626c91115
+    <color name="table_line">#DCDCDC</color>
 </resources>

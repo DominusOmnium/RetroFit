@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 
@@ -31,7 +32,7 @@ public class StartActivity extends Activity {
             protected Boolean doInBackground(String... strings) {
                 SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
                 String auth = sp.getString("auth", "none");
-                if (auth == "none")
+                if (auth == null || auth.equals("none"))
                     startActivity(new Intent(getApplicationContext(), CreateActivity.class));
                 else
                     startActivity(new Intent(getApplicationContext(), ActivityEnter.class).putExtra("auth", auth));
@@ -40,4 +41,14 @@ public class StartActivity extends Activity {
         }.execute();
     }
 
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        String auth = sp.getString("auth", "none");
+        if (auth == null || auth.equals("none"))
+            startActivity(new Intent(getApplicationContext(), CreateActivity.class));
+        else
+            startActivity(new Intent(getApplicationContext(), ActivityEnter.class).putExtra("auth", auth));
+        return super.onTouchEvent(event);
+    }
 }

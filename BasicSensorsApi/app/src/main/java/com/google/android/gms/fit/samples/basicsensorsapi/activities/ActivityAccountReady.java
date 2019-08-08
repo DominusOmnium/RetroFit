@@ -2,6 +2,7 @@ package com.google.android.gms.fit.samples.basicsensorsapi.activities;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Spannable;
@@ -26,11 +27,14 @@ public class ActivityAccountReady extends AppCompatActivity {
         s.setSpan(new ForegroundColorSpan(Color.WHITE), 0, title.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         getSupportActionBar().setTitle(s);
 
+
+        PreferenceManager.getDefaultSharedPreferences(this).edit().putBoolean("sync", false).commit();
+
         Button b_inApp = findViewById(R.id.b_inApp);
         b_inApp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ActivityAccountReady.this, DiaryActivity.class);
+                Intent intent = new Intent(ActivityAccountReady.this, profile.class);
                 startActivity(intent);
             }
         });
