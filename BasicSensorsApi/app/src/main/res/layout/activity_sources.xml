@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.profile">
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/nav_view_s"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+    <TextView
+        android:id="@+id/sources_em"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/N20"
+        android:textAppearance="@style/N1"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.20" />
+
+    <TableLayout
+        android:id="@+id/tl_table"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        android:stretchColumns="2,3,4"
+        app:layout_constraintBottom_toTopOf="@+id/nav_view_s"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sources_em">
+
+
+        <TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_span="8"
+                android:background="@color/table_line"></View>
+        </TableRow>
+
+        <TableRow android:paddingBottom="3dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/field_color"
+                android:gravity="left|center"
+                android:text="Диастолическое давление"
+                android:textColor="@color/textcolor_light"
+                android:textSize="@dimen/table_text_size" />
+
+            <Switch
+                android:id="@+id/pressure_di_sl"
+                android:layout_height="50dp"
+                android:background="@color/field_color"
+                android:gravity="center"
+                android:textColor="@color/textcolor_light"
+                android:textSize="@dimen/table_text_size" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_span="8"
+                android:background="@color/table_line"></View>
+        </TableRow>
+
+        <TableRow android:paddingBottom="3dp">
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:background="@color/field_color"
+                android:gravity="left|center"
+                android:text="Систолическое давление"
+                android:textColor="@color/textcolor_light"
+                android:textSize="@dimen/table_text_size" />
+
+            <Switch
+                android:id="@+id/pressure_sent_sl"
+                android:layout_height="50dp"
+                android:background="@color/field_color"
+                android:gravity="center"
+                android:textColor="@color/textcolor_light"
+                android:textSize="@dimen/table_text_size" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_span="8"
+                android:background="@color/table_line"></View>
+        </TableRow>
+
+        <TableRow android:paddingBottom="3dp">
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:background="@color/field_color"
+                android:gravity="left|center"
+                android:text="Пульс"
+                android:textColor="@color/textcolor_light"
+                android:textSize="@dimen/table_text_size" />
+
+            <Switch
+                android:id="@+id/puls_sl"
+                android:layout_height="50dp"
+                android:background="@color/field_color"
+                android:gravity="center"
+                android:textColor="@color/textcolor_light"
+                android:textSize="@dimen/table_text_size" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_span="8"
+                android:background="@color/table_line"></View>
+        </TableRow>
+
+        <TableRow android:paddingBottom="3dp">
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:background="@color/field_color"
+                android:gravity="left|center"
+                android:text="Шаги"
+                android:textColor="@color/textcolor_light"
+                android:textSize="@dimen/table_text_size" />
+
+            <Switch
+                android:id="@+id/step_sl"
+                android:layout_height="50dp"
+                android:background="@color/field_color"
+                android:gravity="center"
+                android:textColor="@color/textcolor_light"
+                android:textSize="@dimen/table_text_size" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_span="8"
+                android:background="@color/table_line"></View>
+        </TableRow>
+
+        <TableRow android:paddingBottom="3dp">
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:background="@color/field_color"
+                android:gravity="left|center"
+                android:text="Вес"
+                android:textColor="@color/textcolor_light"
+                android:textSize="@dimen/table_text_size" />
+
+            <Switch
+                android:id="@+id/weight_sl"
+                android:layout_height="50dp"
+                android:background="@color/field_color"
+                android:gravity="center"
+                android:textColor="@color/textcolor_light"
+                android:textSize="@dimen/table_text_size" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_span="8"
+                android:background="@color/table_line"></View>
+        </TableRow>
+    </TableLayout>
+
+
+</android.support.constraint.ConstraintLayout>

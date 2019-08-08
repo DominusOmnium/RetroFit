@@ -77,6 +77,9 @@ public class profile extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.nav_view);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
         String title = "Все данные";
         SpannableString s = new SpannableString(title);
         s.setSpan(new ForegroundColorSpan(Color.WHITE), 0, title.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
@@ -599,34 +602,19 @@ public class profile extends AppCompatActivity
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            Fragment fragment = null;
-            Class fragmentClass = null;
 
             switch (item.getItemId())
             {
                 case R.id.profile:
-                    fragmentClass = profile.class;
+                    startActivity(new Intent(profile.this, profile.class));
                     return true;
                 case R.id.data:
-
+                    startActivity(new Intent(profile.this, Sources.class));
                     return true;
                 case R.id.sources:
-
+                    startActivity(new Intent(profile.this, Profile1.class));
                     return true;
             }
-
-            try
-            {
-                fragment = (Fragment) fragmentClass.newInstance();
-            } catch (Exception e)
-            {
-                e.printStackTrace();
-            }
-
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
-            item.setChecked(true);
-            setTitle(item.getTitle());
 
             return true;
         }

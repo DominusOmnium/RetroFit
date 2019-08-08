@@ -42,4 +42,5 @@
     <string name="title_data">Данные</string>
     <string name="title_sources">Источники</string>
     <string name="error">Введённые данные некорректны</string>
+    <string name="N20">Разрешения для приложения \"ЕМИАС+\"</string>
 </resources>
